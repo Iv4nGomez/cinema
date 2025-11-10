@@ -1,10 +1,3 @@
-/*
-  PALETA MINIMALISTA Y ACCESIBLE PARA CINE
-  - Enfocada en "dark mode" para elegancia y contraste.
-  - Tipografía de sistema para rendimiento.
-  - Efectos "glow" (resplandor) en lugar de sombras.
-*/
-
 :root {
   --color-fondo: #121212;
   --color-section: #1E1E1E;
@@ -15,6 +8,17 @@
                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --resplandor-hover: 0 0 10px 2px rgba(var(--color-acento-rgb), 0.3);
   --radio-borde: 8px;
+
+    --primary-100:#FFC107;
+    --primary-200:#dda400;
+    --primary-300:#916400;
+    --accent-100:#00BCD4;
+    --accent-200:#005e74;
+    --text-100:#FFFFFF;
+    --text-200:#9c9c9c;
+    --bg-100:#0B0F2B;
+    --bg-200:#1a1e3b;
+    --bg-300:#333554;
 }
 
 * {
@@ -29,13 +33,14 @@ img {
 
 body {
     font-family: var(--fuente-base);
-    background-color: var(--color-fondo);
-    color: var(--color-texto-principal);
+    background-color: var(--bg-100);
+    color: var(--text-200);
 }
 
 button {
-    background-color: orange;
+    background-color: var(--primary-200);
     cursor: pointer;
+    color: var(--text-100);
 
 }
 
@@ -60,6 +65,11 @@ header ul {
     gap: 20px;
 }
 
+
+nav a:hover {
+    color: var(--primary-100);
+    transition: 300ms;
+}
 
 .hero {
     position: relative;
@@ -93,6 +103,17 @@ header ul {
     gap: 20px;
 }
 
+.hero-cta button {
+    transition: 300ms;
+    
+}
+
+
+.hero-cta button:hover {
+    background-color: var(--bg-200);
+    
+}
+
 .content-stars {
     color: rgb(238, 238, 0);
 }
@@ -111,7 +132,10 @@ header ul {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     width: 100%;
     justify-items: center;
-     background-color: var(--color-superficie);
+    align-items: center;
+    background-color: var(--bg-200);
+    border-radius: 5px;
+
 
 }
 
@@ -167,15 +191,17 @@ article {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    
 }
 
 footer {
-    background-color: rgb(32, 32, 32);
+    background-color: var(--bg-300);
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    color: var(--text-200);
 }
 
 .networks-socials {
@@ -203,13 +229,26 @@ footer {
 }
 
 .button {
-    background-color: white;
-    border: 2px solid orange;
+    background-color: var(--primary-200);
     border-radius: 20px;
     padding: 10px 30px;
 }
 
 .button > a {
-    color: #121212;
+    color: var(--color-texto-principal);
     font-weight: 700;
+}
+
+article > h1 {
+    color: var(--color-texto-principal);
+}
+
+.card img {
+    transition: 300ms;
+    filter: saturate(100%);
+}
+
+.card:hover img {
+    scale: 1.2;
+    filter: saturate(0%);
 }
