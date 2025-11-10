@@ -1,3 +1,22 @@
+/*
+  PALETA MINIMALISTA Y ACCESIBLE PARA CINE
+  - Enfocada en "dark mode" para elegancia y contraste.
+  - Tipografía de sistema para rendimiento.
+  - Efectos "glow" (resplandor) en lugar de sombras.
+*/
+
+:root {
+  --color-fondo: #121212;
+  --color-section: #1E1E1E;
+  --color-texto-principal: #F1F1F1;
+  --color-texto-secundario: #AAAAAA;
+  --color-borde: #333333;
+  --fuente-base: system-ui, -apple-system, BlinkMacSystemFont, 
+                  "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --resplandor-hover: 0 0 10px 2px rgba(var(--color-acento-rgb), 0.3);
+  --radio-borde: 8px;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -8,25 +27,27 @@ img {
     width: 300px;
 }
 
-@font-face {
-  font-family: 'Righteous-Regular';
-    src: 
-        
-        local("Righteous"),
-        url(./fonts/Righteous/Righteous-Regular.ttf)
+body {
+    font-family: var(--fuente-base);
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
 }
 
-body {
-    font-family: "Righteous-Regular";
+button {
+    background-color: orange;
+    cursor: pointer;
+
 }
 
 a {
     text-decoration: none;
-    color: brown;
+    color: white;
+    
+
 }
 
 header {
-    background-color: gray;
+    background-color: var(--color-fondo-secundario);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,24 +60,31 @@ header ul {
     gap: 20px;
 }
 
-.hero {
-    background-color: aqua;
-}
-
-.films-cinema {
-    background-color: red;
-
-}
 
 .hero {
+    position: relative;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    background-image: url(image/interstellar.jpg);
     height: 500px;
     width: 100%;
     text-align: center;
+    gap: 20px;
+}
+
+.hero::before {
+    content: ''; 
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('image/hero/interstellar.png');
+    background-position: 0 -100px;
+    background-size: cover;
+    filter: brightness(0.5);
+
+    z-index: -1;
 }
 
 .hero-content {
@@ -72,24 +100,116 @@ header ul {
 .hero h1 {
     color: aliceblue;
     font-size: 3rem;
-    background-color: black;
+    text-shadow: var(--sombra-pop);
+    font-size: 5rem;
 }
 
-.container-cards {
+.container-cards { 
     gap: 20px;
     padding: 20px;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     width: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(238, 238, 0);
+    justify-items: center;
+     background-color: var(--color-superficie);
+
 }
 
 .card {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 450px;
     overflow: hidden;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--sombra-pop);
+    animation-name: popup;
+    animation-duration: 200ms;
+    animation: reveal auto linear both;
+    animation-timeline: view();
+    animation-range: 0px 600px;
 }
 
+@keyframes reveal {
+    from {
+        opacity: 0%;
+        scale: 0;
+    
+    }
+
+    to {
+        transform: translateY(10px);
+        scale: 1;
+    }
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.hero-cta button {
+    padding: 10px 20px;
+    border-radius: var(--radio-borde);
+    border: 0;
+    width: 100px;
+}
+
+section {
+    margin-top: 20px;
+    background-color: var(--color-principal);
+    display: fle;
+}
+
+article {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer {
+    background-color: rgb(32, 32, 32);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.networks-socials {
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+}
+
+.networks-socials i {
+    margin-right: 5px;
+}
+
+.tittle-footer  {
+    margin-bottom: 10px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+}
+
+.contact i {
+    margin-right: 5px;
+}
+
+.button {
+    background-color: white;
+    border: 2px solid orange;
+    border-radius: 20px;
+    padding: 10px 30px;
+}
+
+.button > a {
+    color: #121212;
+    font-weight: 700;
+}
