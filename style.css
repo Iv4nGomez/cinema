@@ -1,7 +1,7 @@
 :root {
   --color-fondo: #121212;
   --color-section: #1E1E1E;
-  --color-texto-principal: #F1F1F1;
+  --color-texto-principal: #f1f1f1;
   --color-texto-secundario: #AAAAAA;
   --color-borde: #333333;
   --fuente-base: system-ui, -apple-system, BlinkMacSystemFont, 
@@ -25,6 +25,54 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+.hidden {
+    display: none;
+} 
+
+iframe {
+    width: 100%;
+    height: 50%;
+}
+
+
+.show-modal {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    justify-content: space-between;
+    width: 75%;
+    height: 75%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    backdrop-filter: blur(100px);
+    z-index: 4;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
+.modal-iframe > button {
+    width: 50%;
+    align-self: flex-end;
+    border: 0;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+
+.blur-background {
+    filter: blur(100px);
+}
+
+.blur-background {
+    filter: blur(20px);
 }
 
 img {
@@ -90,10 +138,9 @@ nav a:hover {
     width: 100%;
     height: 100%;
     background-image: url('image/hero/interstellar.png');
-    background-position: 0 -100px;
+    background-position: 0 0px;
     background-size: cover;
     filter: brightness(0.5);
-
     z-index: -1;
 }
 
@@ -129,7 +176,7 @@ nav a:hover {
     gap: 20px;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     width: 100%;
     justify-items: center;
     align-items: center;
@@ -140,18 +187,35 @@ nav a:hover {
 }
 
 .card {
+    z-index: 1;
     width: 300px;
     height: 450px;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: var(--sombra-pop);
-    animation-name: popup;
+    animation-name: zpopup;
     animation-duration: 200ms;
     animation: reveal auto linear both;
     animation-timeline: view();
     animation-range: 0px 600px;
+    position: relative;
+}
+
+h2 {
+    display: none;
+}
+
+.card:hover > h2 {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    color: var(--color-texto-principal);
+    font-size: 2rem;
+
+
 }
 
 @keyframes reveal {
@@ -250,5 +314,19 @@ article > h1 {
 
 .card:hover img {
     scale: 1.2;
-    filter: saturate(0%);
+    filter: brightness(0.5);
+}
+
+.menu-mobile {
+    display: none;
+}
+
+@media (width < 650px) {
+    header nav, .button {
+        display: none;
+    }
+
+    .menu-mobile {
+        display: flex;
+    }
 }

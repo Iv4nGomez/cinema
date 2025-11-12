@@ -21,8 +21,11 @@
         <div class="button">
             <a href="#">Comprar entradas</a>
         </div>
+        <div class="menu-mobile">
+            <button><i class="fa-solid fa-bars"></i></button>
+        </div>
     </header>
-    <div class="hero">
+    <div class="hero" id="hero">
         <div class="hero-content">
             <div class="container-namefilm">
                   <h1>NOMBRE PELICULA</h1>
@@ -39,7 +42,7 @@
             </div>
         </div>
         <div class="hero-cta">
-            <button>Ver traíler</button>
+            <button id="button-trailer">Ver traíler</button>
         </div>
         <div class="carrusel-points">
 
@@ -52,18 +55,23 @@
                 <div class="container-cards">
                     <div class="card">
                         <img src="image/back-to-future.jpg" alt="">
+                        <h2>Regreso al futuro</h2>
                     </div>
                     <div class="card">
                         <img src="image/deadpool-3.jpg" alt="">
+                        <h2>Deadpool 3</h2>
                     </div>
                     <div class="card">
                         <img src="image/dragon-ball.jpg" alt="">
+                        <h2>Dragon ball</h2>
                     </div>
                     <div class="card">
                         <img src="image/interstellar.jpg" alt="">
+                        <h2>Interstellar</h2>
                     </div>
                     <div class="card">
                         <img src="image/mario-bros.jpg" alt="">
+                        <h2>Mario Bros</h2>
                     </div>
                 </div>
             </article>
@@ -97,5 +105,11 @@
            </div>
         </div>
     </footer>
+
+    <div id="modal" class="modal-iframe" class="hidden">
+        <button id="exit-message"><span><p>Salir</p><i class="fa-solid fa-arrow-right"></i></span></button>
+         <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/UoSSbmD9vqc?si=PIuxIYn48YIePP11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
