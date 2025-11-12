@@ -1,8 +1,50 @@
-button = document.getElementById('button-trailer')
+const button = document.getElementById('button-trailer')
 
-div = document.getElementById('modal')
-buttonExit = document.getElementById('exit-message')
-video = document.getElementById('video')
+const div = document.getElementById('modal')
+const buttonExit = document.getElementById('exit-message')
+const video = document.getElementById('video')
+
+const buttonMaps = document.getElementById('btn-maps')
+const containerMaps = document.getElementById('maps')
+const botonSalida = document.getElementById('exit-maps')
+
+
+buttonMaps.addEventListener('click', () => {
+    containerMaps.classList.remove('hidden')
+    containerMaps.classList.add('show-modal')
+    main = document.querySelector('main');
+    header = document.querySelector('header');
+    footer = document.querySelector('footer')
+    main.classList.add('blur-background');
+    header.classList.add('blur-background');
+    footer.classList.add('blur-background');
+    hero = document.getElementById('hero');
+    hero.classList.add('blur-background')
+})
+
+
+botonSalida.addEventListener('click', () => {
+    containerMaps.classList.add('hidden')
+    buttonExit.classList.add('hidden')
+    containerMaps.classList.remove('show-modal')
+    main = document.querySelector('main');
+    header = document.querySelector('header');
+    footer = document.querySelector('footer')
+    main.classList.remove('blur-background');
+    header.classList.remove('blur-background');
+    footer.classList.remove('blur-background');
+    hero = document.getElementById('hero');
+    hero.classList.remove('blur-background')
+
+    if (video) {
+    video.contentWindow.postMessage(
+      '{"event":"command", "func":"pauseVideo", "args":""}', 
+      '*'
+    );
+  }
+})
+
+
 
 button.addEventListener('click', () => {
     div.classList.remove('hidden')
@@ -17,6 +59,13 @@ button.addEventListener('click', () => {
     footer.classList.add('blur-background');
     hero = document.getElementById('hero');
     hero.classList.add('blur-background')
+
+     if (video) {
+    video.contentWindow.postMessage(
+      '{"event":"command", "func":"playVideo", "args":""}', 
+      '*'
+    );
+  }
 })
 
 
@@ -33,7 +82,16 @@ buttonExit.addEventListener('click', () => {
     footer.classList.remove('blur-background');
     hero = document.getElementById('hero');
     hero.classList.remove('blur-background')
+
+    if (video) {
+    video.contentWindow.postMessage(
+      '{"event":"command", "func":"pauseVideo", "args":""}', 
+      '*'
+    );
+  }
 })
+
+
 
 
 

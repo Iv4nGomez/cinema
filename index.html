@@ -10,12 +10,14 @@
 <body>
     <header>
         <div class="container-logo">
-           <a href="">CINEMA</a>
+            <a  href="index.html"><svg width="800px" height="800px" class="icon-logo" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M1 1H3V3H5V1H11V3H13V1H15V15H13V13H11V15H5V13H3V15H1V1ZM3 9H5V11H3V9ZM13 9H11V11H13V9ZM3 5H5V7H3V5ZM13 5H11V7H13V5Z"/>
+            </svg></a>
         </div>
         <nav>
             <ul>
                 <a href="#"><li>Cartelera</li></a>
-                <a href="#"><li>¿Cómo llegar?</li></a>
+                <button id="btn-maps"><li>¿Cómo llegar?</li></a></button>
             </ul>
         </nav>
         <div class="button">
@@ -28,7 +30,7 @@
     <div class="hero" id="hero">
         <div class="hero-content">
             <div class="container-namefilm">
-                  <h1>NOMBRE PELICULA</h1>
+                  <h1>INTERSTELLAR</h1>
             </div>
             <div class="content-stars">
                 <i class="fa-solid fa-star"></i>
@@ -79,7 +81,7 @@
     </main>
     <footer>
         <div class="copyright">
-            <small>&copy; Cinema 2025 Todos los derechos reservados.</small>
+            <small>&copy; Cinema 2025</small>
         </div>
         <div class="container-socials">
             <div class="tittle-footer">
@@ -106,10 +108,16 @@
         </div>
     </footer>
 
-    <div id="modal" class="modal-iframe" class="hidden">
-        <button class="hidden" id="exit-message"><span><p>Salir</p><i class="fa-solid fa-arrow-right"></i></span></button>
-        <iframe class="hidden video" id="video" width="560" height="315" src="https://www.youtube.com/embed/UoSSbmD9vqc?si=PIuxIYn48YIePP11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div id="modal" class="modal-iframe hidden trailer-video">
+        <button class="hidden" id="exit-message"><span><p>Salir</p><i class="fa-solid fa-x"></i></span></button>
+        <iframe class="hidden video" id="video" width="560" height="315" src="https://www.youtube.com/embed/UoSSbmD9vqc?si=PIuxIYn48YIePP11&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
+
+    <div id="maps" class="modal-iframe hidden container-maps" >
+        <button id="exit-maps"><span><p>Salir</p><i class="fa-solid fa-x"></i></span></button>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3174.3283965148476!2d-5.9414114235549675!3d37.28735004008696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1271f1d942234f%3A0xf9bcba987b66ece!2sCineapolis%20Way!5e0!3m2!1sen!2sus!4v1762961006224!5m2!1sen!2sus" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
