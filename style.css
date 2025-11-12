@@ -41,7 +41,6 @@ iframe {
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-    justify-content: space-between;
     width: 75%;
     height: 75%;
     left: 0;
@@ -49,20 +48,37 @@ iframe {
     top: 0;
     bottom: 0;
     margin: auto;
-    backdrop-filter: blur(100px);
     z-index: 4;
     position: fixed;
-    align-items: center;
-    justify-content: center;
+    gap: 20px;
+   
+
  
 }
 
+span {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    
+}
+
 .modal-iframe > button {
-    width: 50%;
-    align-self: flex-end;
+    align-self: flex-start;
     border: 0;
     border-radius: 20px;
-    padding: 20px;
+    align-self: flex-end;
+    width: 25%;
+    text-align: end;
+    background-color: #00bbd400;
+   
+}
+
+.modal-iframe .video {
+    height: 100%;
+    width: 100%;
+    align-self: center;
 }
 
 
