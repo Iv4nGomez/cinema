@@ -246,6 +246,12 @@ h2 {
     display: none;
 }
 
+.card button {
+    border: 0;
+    background-color: var(--bg-300);
+    border-radius: 20px;
+}
+
 .card:hover > h2 {
     display: block;
     z-index: 1;
@@ -307,6 +313,7 @@ footer {
     margin-top: 20px;
     color: var(--text-200);
     gap: 40px;
+    overflow: hidden;
 }
 
 .networks-socials {
