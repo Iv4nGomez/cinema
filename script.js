@@ -99,6 +99,10 @@ buttonCartelera.addEventListener('click', () => {
     const modTittle = document.getElementById('tittle-films');
     modTittle.innerHTML = 'Cartelera'
 
+    const container = document.getElementById('container-cards');
+    container.classList.remove('container-cards')
+    container.classList.add('container-cards-grids')
+
 })
 
 
