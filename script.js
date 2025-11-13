@@ -105,4 +105,28 @@ buttonCartelera.addEventListener('click', () => {
 
 })
 
+const menuMobile = document.getElementById('menuMobile')
+const buttonMobile = document.getElementById('buttonMobile')
+
+buttonMobile.addEventListener('click', () => {
+    menuMobile.classList.toggle('active')
+    buttonMobile.classList.toggle('active')
+    containerMaps.classList.add('sobreponer')
+});
+
+const btnCarteleraMobile = document.getElementById('btn-cartelera-mbl');
+const btnMapsMobile = document.getElementById('btn-maps-mbl')
+
+btnCarteleraMobile.addEventListener('click', () => {
+    menuMobile.classList.remove('active')
+    buttonMobile.classList.remove('active')
+    buttonCartelera.click()
+})
+
+btnMapsMobile.addEventListener('click', () => {
+    menuMobile.classList.remove('active')
+    buttonMobile.classList.remove('active')
+    buttonMaps.click()
+})
+
 
