@@ -173,7 +173,7 @@ nav ul > button {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('image/hero/interstellar.png');
+    background-image: url('image/hero/interstellar.webp');
     background-position: 0 0px;
     background-size: cover;
     filter: brightness(0.5);
@@ -246,7 +246,6 @@ nav ul > button {
     display: flex;
     flex-direction: column;
     position: relative;
-    background-color: red;
     justify-content: center;
     text-align: center;
 }
