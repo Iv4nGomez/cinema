@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinema Loop</title>
+    <title>Cinema</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
@@ -124,6 +124,146 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3174.3283965148476!2d-5.9414114235549675!3d37.28735004008696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1271f1d942234f%3A0xf9bcba987b66ece!2sCineapolis%20Way!5e0!3m2!1sen!2sus!4v1762961006224!5m2!1sen!2sus" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        const button = document.getElementById('button-trailer')
+
+const div = document.getElementById('modal')
+const buttonExit = document.getElementById('exit-message')
+const video = document.getElementById('video')
+
+const buttonMaps = document.getElementById('btn-maps')
+const containerMaps = document.getElementById('maps')
+const botonSalida = document.getElementById('exit-maps')
+
+
+buttonMaps.addEventListener('click', () => {
+    containerMaps.classList.remove('hidden')
+    containerMaps.classList.add('show-modal')
+    main = document.querySelector('main');
+    header = document.querySelector('header');
+    footer = document.querySelector('footer')
+    main.classList.add('blur-background');
+    header.classList.add('blur-background');
+    footer.classList.add('blur-background');
+    hero = document.getElementById('hero');
+    hero.classList.add('blur-background')
+})
+
+
+botonSalida.addEventListener('click', () => {
+    containerMaps.classList.add('hidden')
+    buttonExit.classList.add('hidden')
+    containerMaps.classList.remove('show-modal')
+    const main = document.querySelector('main');
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer')
+    const hero = document.getElementById('hero')
+    main.classList.remove('blur-background');
+    header.classList.remove('blur-background');
+    footer.classList.remove('blur-background');
+    hero.classList.remove('blur-background')
+
+    if (video) {
+    video.contentWindow.postMessage(
+      '{"event":"command", "func":"pauseVideo", "args":""}', 
+      '*'
+    );
+  }
+})
+
+
+
+button.addEventListener('click', () => {
+    div.classList.remove('hidden')
+    buttonExit.classList.remove('hidden')
+    video.classList.remove('hidden')
+    div.classList.add('show-modal')
+    const main = document.querySelector('main');
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer')
+    main.classList.add('blur-background');
+    header.classList.add('blur-background');
+    footer.classList.add('blur-background');
+    hero = document.getElementById('hero');
+    hero.classList.add('blur-background')
+
+     if (video) {
+    video.contentWindow.postMessage(
+      '{"event":"command", "func":"playVideo", "args":""}', 
+      '*'
+    );
+  }
+})
+
+
+buttonExit.addEventListener('click', () => {
+    div.classList.add('hidden')
+    buttonExit.classList.add('hidden')
+    video.classList.add('hidden')
+    div.classList.remove('show-modal')
+    const main = document.querySelector('main');
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer')
+    main.classList.remove('blur-background');
+    header.classList.remove('blur-background');
+    footer.classList.remove('blur-background');
+    hero = document.getElementById('hero');
+    hero.classList.remove('blur-background')
+
+    if (video) {
+    video.contentWindow.postMessage(
+      '{"event":"command", "func":"pauseVideo", "args":""}', 
+      '*'
+    );
+  }
+})
+
+
+const buttonCartelera = document.getElementById('btn-cartelera');
+
+buttonCartelera.addEventListener('click', () => {
+
+    console.log('buttonCartelera')    
+    const hero = document.getElementById('hero')
+    hero.classList.add('hidden')
+    hero.classList.remove('hero')
+
+    const modTittle = document.getElementById('tittle-films');
+    modTittle.classList.remove('hidden');
+    modTittle.innerHTML = 'Cartelera';
+
+    const container = document.getElementById('container-cards');
+    container.classList.remove('container-cards')
+    container.classList.add('container-cards-grids')
+
+})
+
+const menuMobile = document.getElementById('menuMobile')
+const buttonMobile = document.getElementById('buttonMobile')
+
+buttonMobile.addEventListener('click', () => {
+    menuMobile.classList.toggle('active')
+    buttonMobile.classList.toggle('active')
+    containerMaps.classList.add('sobreponer')
+});
+
+const btnCarteleraMobile = document.getElementById('btn-cartelera-mbl');
+const btnMapsMobile = document.getElementById('btn-maps-mbl')
+
+btnCarteleraMobile.addEventListener('click', () => {
+    menuMobile.classList.remove('active')
+    buttonMobile.classList.remove('active')
+    buttonCartelera.click()
+})
+
+btnMapsMobile.addEventListener('click', () => {
+    menuMobile.classList.remove('active')
+    buttonMobile.classList.remove('active')
+    buttonMaps.click()
+})
+
+
+
+    </script>
 </body>
 </html>
