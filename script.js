@@ -51,6 +51,9 @@ button.addEventListener('click', () => {
     buttonExit.classList.remove('hidden')
     video.classList.remove('hidden')
     div.classList.add('show-modal')
+    const main = document.querySelector('main');
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer')
     main.classList.add('blur-background');
     header.classList.add('blur-background');
     footer.classList.add('blur-background');
@@ -71,6 +74,9 @@ buttonExit.addEventListener('click', () => {
     buttonExit.classList.add('hidden')
     video.classList.add('hidden')
     div.classList.remove('show-modal')
+    const main = document.querySelector('main');
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer')
     main.classList.remove('blur-background');
     header.classList.remove('blur-background');
     footer.classList.remove('blur-background');
